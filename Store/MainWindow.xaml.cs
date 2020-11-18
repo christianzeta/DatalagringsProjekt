@@ -24,7 +24,9 @@ namespace Store
         public MainWindow()
         {
             InitializeComponent();
-
+            var name = State.User.Name;
+            var SignInText = "Du är inloggad som: " + name;
+            SignedInAs.Text = SignInText;
             State.Movies = API.GetMovieSlice(0, 30);
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
@@ -47,7 +49,7 @@ namespace Store
                             image.Margin = new Thickness(4, 4, 4, 4);
 
                             MovieGrid.Children.Add(image);
-                            Grid.SetRow(image, y);
+                            Grid.SetRow(image, y+1);
                             Grid.SetColumn(image, x);
                         }
                         catch (Exception e) when 
@@ -74,6 +76,17 @@ namespace Store
                 MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (State.User != null)
+            {
+                var next_window = new ProfileWindow();
+                next_window.Show();
+                this.Close();
+            }
+            
         }
     }
 }
