@@ -6,9 +6,20 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        <Label Content="Enter Your Name" HorizontalAlignment="Center" Margin="0,108,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,184,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,246,0,0" VerticalAlignment="Top"/>
+    <Grid Background="LightBlue">
+        
+        <Label Content="WELCOME" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" FontSize="20"/>
+        
+        <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,150,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" />
+        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="PasswordField" HorizontalAlignment="Center" Margin="0,175,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2">
+        </TextBox>
+        <Label Content="or" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top"/>
+        <Button  Content="Create Account" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top"/>
+        
+        
+
+        
     </Grid>
+    
 </Window>

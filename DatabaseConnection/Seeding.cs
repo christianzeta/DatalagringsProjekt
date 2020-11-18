@@ -21,6 +21,8 @@ namespace DatabaseConnection
                     new Customer { Name = "Björn" },
                     new Customer { Name = "Robin" },
                     new Customer { Name = "Kalle" },
+                    new Customer { Name = "Kim" },
+
                 });
 
                 // Här laddas data in från SeedData foldern för att fylla ut Movies tabellen
