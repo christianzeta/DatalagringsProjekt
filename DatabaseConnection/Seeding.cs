@@ -10,6 +10,7 @@ namespace DatabaseConnection
     {
         static void Main() 
         {
+
             using (var ctx = new Context())
             {
                 ctx.RemoveRange(ctx.Sales);
