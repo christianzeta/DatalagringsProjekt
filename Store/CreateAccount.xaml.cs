@@ -16,6 +16,7 @@ namespace Store
     /// <summary>
     /// Interaction logic for CreateAccount.xaml
     /// </summary>
+    
     public partial class CreateAccount : Window
     {
         public CreateAccount()
@@ -23,12 +24,19 @@ namespace Store
             InitializeComponent();
         }
 
-        private void AccountCreate_Click(object sender, RoutedEventArgs e)
+        public void AccountCreate_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();
             next_window.Show();
             this.Close();
+          var hej = CreateAccountUsernameField.Text;
+            var ctx = new Context();
+            ctx.AddRange(new Customer { Name = hej });
+         
         }
+        
+        
+
     }
     
 }
