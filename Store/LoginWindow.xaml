@@ -15,11 +15,12 @@
         <TextBox Name="PasswordField" HorizontalAlignment="Center" Margin="0,175,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2">
         </TextBox>
         <Label Content="or" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top"/>
-        <Button  Content="Create Account" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top"/>
-        
+        <Button Click="CreateAccount_Click" Content="Create Account" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top"/>
         
 
-        
+
+
+
     </Grid>
     
 </Window>

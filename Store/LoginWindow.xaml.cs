@@ -37,5 +37,12 @@ namespace Store
                 NameField.Text = "...";
             }
         }
+        private void CreateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new CreateAccount();
+            next_window.Show();
+            this.Close();
+
+        }
     }
 }
