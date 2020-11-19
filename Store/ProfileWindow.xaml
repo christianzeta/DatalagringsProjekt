@@ -6,37 +6,57 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="ProfileWindow" Height="450" Width="1200">
+
     <ScrollViewer>
-        <Grid Name="MovieGrid" Background="#111" ShowGridLines="False">
+        <Grid Name="ContainerGrid" Background="Beige">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <StackPanel Name="Menu" Grid.Row="0" Grid.ColumnSpan="5" Orientation="Horizontal" Background="#222">
-                <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental</Label>
-                <Button Width="100" Background="#333" Foreground="White" Content="Movies" Click="MoviesButton_Click"></Button>
-                <Button Width="100" Background="#333" Foreground="White" Content="Information" ></Button>
-                <Button Width="100" Background="#333" Foreground="White" Content="Log Out" ></Button>
-            </StackPanel>
-            <StackPanel Name="ProfileInfo" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="5" Orientation="Vertical">
-                <TextBlock Height="140" Width="1200" TextAlignment="Center" Padding="30" Text="Temp text" Name="ProfileName" Foreground="White"></TextBlock>
-                <TextBlock Height="140" Width="1200" TextAlignment="Center" FontSize="40"  Padding="40" Text="RENTED MOVIES" Name="RentedMoviesText" Foreground="White"></TextBlock>
-            </StackPanel>
+            <Grid Name="MenuGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Height="40" Background="#999" Orientation="Horizontal" VerticalAlignment="Top">
+                    <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental</Label>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Movies" Click="MoviesButton_Click"></Button>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Information" ></Button>
+                    <Button Width="100" Background="#999" Foreground="White" Content="Log Out" ></Button>
+                    <TextBlock Name="ProfileName" Width="600" Foreground="Black" Text="Profilepage" Padding="12"></TextBlock>
+                </StackPanel>
+
+            </Grid>
+            <Grid Name="MovieGrid" Background="#111" ShowGridLines="False" Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                </Grid.RowDefinitions>
+            </Grid>
         </Grid>
     </ScrollViewer>
 </Window>

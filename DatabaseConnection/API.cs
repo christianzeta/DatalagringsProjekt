@@ -8,6 +8,19 @@ namespace DatabaseConnection
 {
     public class API
     {
+        public static List<Movie> GetSalesList(int userId)
+        { 
+            using var ctx = new Context();
+            var salesList = ctx.Sales.Where(c => c.Customer.Id == userId).ToList();
+            List<Movie> movieList = new List<Movie>();
+            foreach (var sale in salesList)
+            {
+                movieList.Add(sale.Movie);
+            }
+
+            return movieList;
+        }
+
         public static List<Movie> GetMovieSlice(int a, int b)
         {
             using var ctx = new Context();

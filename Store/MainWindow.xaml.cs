@@ -28,7 +28,7 @@ namespace Store
             var SignInText = "Du är inloggad som: " + name;
             SignedInAs.Text = SignInText;
             State.Movies = API.GetMovieSlice(0, 30);
-            for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
+            for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
                 {
@@ -49,7 +49,7 @@ namespace Store
                             image.Margin = new Thickness(4, 4, 4, 4);
 
                             MovieGrid.Children.Add(image);
-                            Grid.SetRow(image, y+1);
+                            Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);
                         }
                         catch (Exception e) when 
