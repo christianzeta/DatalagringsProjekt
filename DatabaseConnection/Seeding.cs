@@ -24,6 +24,7 @@ namespace DatabaseConnection
                     new Customer { FirstName = "Kalle", LastName = "Andersson", Mobile = 07074455445},
                     new Customer { FirstName = "Kim", LastName = "Eriksson", Mobile = 07074455445},
                     
+                    
 
                 });
 
@@ -44,7 +45,7 @@ namespace DatabaseConnection
                     movies.Add(new Movie { Title = cells[2], ImageURL = url });
                 }
                 ctx.AddRange(movies);
-
+                
                 ctx.SaveChanges();
             }
         }

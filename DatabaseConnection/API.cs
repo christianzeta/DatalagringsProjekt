@@ -20,6 +20,15 @@ namespace DatabaseConnection
 
             return movieList;
         }
+        public static void AddUser(string username)
+        {
+           
+            //DatabaseConnection.API.AddUser(username);
+            using var ctx = new Context();
+            ctx.Add(new Customer { Name = username });
+            ctx.SaveChanges();
+        }
+
 
         public static List<Movie> GetMovieSlice(int a, int b)
         {
@@ -51,6 +60,7 @@ namespace DatabaseConnection
                 return false;
             }
         }
+       
        
 
     }
