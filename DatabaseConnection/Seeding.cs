@@ -23,6 +23,7 @@ namespace DatabaseConnection
                     new Customer { Name = "Kalle" },
                     new Customer { Name = "Kim" },
                     
+                    
 
                 });
 
