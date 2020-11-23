@@ -25,7 +25,7 @@ namespace DatabaseConnection
            
             //DatabaseConnection.API.AddUser(username);
             using var ctx = new Context();
-            ctx.Add(new Customer { Name = username });
+            ctx.Add(new Customer { FirstName = username });
             ctx.SaveChanges();
         }
 
