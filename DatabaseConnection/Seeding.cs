@@ -13,15 +13,16 @@ namespace DatabaseConnection
 
             using (var ctx = new Context())
             {
+ 
                 ctx.RemoveRange(ctx.Sales);
                 ctx.RemoveRange(ctx.Movies);
                 ctx.RemoveRange(ctx.Customers);
 
                 ctx.AddRange(new List<Customer> {
-                    new Customer { Name = "Björn" },
-                    new Customer { Name = "Robin" },
-                    new Customer { Name = "Kalle" },
-                    new Customer { Name = "Kim" },
+                    new Customer { FirstName = "Björn", LastName = "Karlsson", Mobile = 07074455445},
+                    new Customer { FirstName = "Robin", LastName = "Nilsson", Mobile = 07074455445},
+                    new Customer { FirstName = "Kalle", LastName = "Andersson", Mobile = 07074455445},
+                    new Customer { FirstName = "Kim", LastName = "Eriksson", Mobile = 07074455445},
                     
 
                 });

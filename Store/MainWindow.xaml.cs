@@ -24,7 +24,7 @@ namespace Store
         public MainWindow()
         {
             InitializeComponent();
-            var name = State.User.Name;
+            var name = State.User.FirstName;
             var SignInText = "Du är inloggad som: " + name;
             SignedInAs.Text = SignInText;
             State.Movies = API.GetMovieSlice(0, 30);

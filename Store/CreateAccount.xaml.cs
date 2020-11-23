@@ -31,7 +31,7 @@ namespace Store
             this.Close();
           var hej = CreateAccountUsernameField.Text;
             var ctx = new Context();
-            ctx.AddRange(new Customer { Name = hej });
+            ctx.AddRange(new Customer { FirstName = hej });
          
         }
         

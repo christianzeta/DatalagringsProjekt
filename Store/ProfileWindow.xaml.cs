@@ -21,7 +21,7 @@ namespace Store
         public ProfileWindow()
         {
             InitializeComponent();
-            var name = State.User.Name;
+            var name = State.User.FirstName + " " + State.User.LastName;
             var greeting = "Profilpage: " + name + ", Number of rented Movies: ";
             ProfileName.Text = greeting.ToUpper();
             ProfileName.FontSize = 10;
