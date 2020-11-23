@@ -32,7 +32,8 @@ namespace Store
         public void AccountCreate_Click(object sender, RoutedEventArgs e)
         {
             string username = CreateAccountUsernameField.Text;
-            API.AddUser(username);
+            string password = CreateAccountPasswordField.Text;
+            API.AddUser(username, password);
             var next_window = new LoginWindow();
             next_window.Show();
 

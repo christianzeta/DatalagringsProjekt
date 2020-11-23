@@ -20,12 +20,12 @@ namespace DatabaseConnection
 
             return movieList;
         }
-        public static void AddUser(string username)
+        public static void AddUser(string username, string password)
         {
            
             //DatabaseConnection.API.AddUser(username);
             using var ctx = new Context();
-            ctx.Add(new Customer { FirstName = username });
+            ctx.Add(new Customer { FirstName = username, Password = password});
             ctx.SaveChanges();
         }
 
@@ -39,6 +39,11 @@ namespace DatabaseConnection
         {
             using var ctx = new Context();
             return ctx.Customers.FirstOrDefault(c => c.FirstName.ToLower() == name.ToLower());
+        }
+        public static Customer GetCustomerByPassword(string pass)
+        {
+            using var ctx = new Context();
+            return ctx.Customers.FirstOrDefault(c => c.Password.ToLower() == pass.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
         {
