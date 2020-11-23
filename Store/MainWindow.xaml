@@ -8,33 +8,54 @@
         Title="MainWindow" Height="450" Width="1200">
 
     <ScrollViewer>
-        <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="False">
+        <Grid Name="ContainerGrid" Background="Beige">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Orientation="Horizontal" Background="#222">
-                <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental </Label>
-                <Button Width="100" Background="#333" Foreground="White" Content="Profile" Click="ProfileButton_Click"></Button>
-                <Button Width="100" Background="#333" Foreground="White" Content="Information"></Button>
-                <Button Width="100" Background="#333" Foreground="White" Content="Log Out"></Button>
-                <TextBlock Width="200" Height="40" TextAlignment="Center" Padding="12"  Foreground="White" Name="SignedInAs"></TextBlock>
-            </StackPanel>
+            <Grid Name="MenuGrid">
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Orientation="Horizontal" Background="#222" Height="40" VerticalAlignment="Top">
+                    <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental</Label>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Profile" Click="ProfileButton_Click"></Button>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Information"></Button>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Log Out"></Button>
+                    <TextBlock Width="200" Height="40" TextAlignment="Center" Padding="12"  Foreground="White" Name="SignedInAs"></TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="False" Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="140" />
+                </Grid.RowDefinitions>
+            </Grid>
         </Grid>
     </ScrollViewer>
 </Window>
