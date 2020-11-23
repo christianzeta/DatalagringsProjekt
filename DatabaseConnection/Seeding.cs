@@ -43,7 +43,7 @@ namespace DatabaseConnection
                     movies.Add(new Movie { Title = cells[2], ImageURL = url });
                 }
                 ctx.AddRange(movies);
-
+                
                 ctx.SaveChanges();
             }
         }

@@ -8,8 +8,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 using DatabaseConnection;
+using System.Data.SqlClient;
+using System.Linq;
+using Microsoft.Data.SqlClient;
 
 namespace Store
 {
@@ -29,11 +34,17 @@ namespace Store
             var next_window = new LoginWindow();
             next_window.Show();
             this.Close();
-          var hej = CreateAccountUsernameField.Text;
-            var ctx = new Context();
-            ctx.AddRange(new Customer { Name = hej });
-         
+          var username = CreateAccountUsernameField.Text;
+            
+           
+
         }
+        public static void AddÚser(string username)
+        {
+            using var ctx = new Context();
+            ctx.Add(new Customer { Name = username });
+        }
+        
         
         
 
