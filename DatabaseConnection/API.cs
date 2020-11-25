@@ -8,9 +8,15 @@ namespace DatabaseConnection
 {
     public class API
     {
+        static Context ctx;
+
+        static API()
+        {
+            ctx = new Context();
+        }
+
         public static List<Movie> GetSalesList(int userId)
         { 
-            using var ctx = new Context();
             var salesList = ctx.Sales.Where(c => c.Customer.Id == userId).ToList();
             List<Movie> movieList = new List<Movie>();
             foreach (var sale in salesList)
@@ -24,7 +30,6 @@ namespace DatabaseConnection
         {
            
             //DatabaseConnection.API.AddUser(username);
-            using var ctx = new Context();
             ctx.Add(new Customer { FirstName = username, Password = password});
             ctx.SaveChanges();
         }
@@ -32,22 +37,18 @@ namespace DatabaseConnection
 
         public static List<Movie> GetMovieSlice(int a, int b)
         {
-            using var ctx = new Context();
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
-        public static Customer GetCustomerByName(string name)
+        public static Customer GetCustomerByNameAndPass(string name, string password)
         {
-            using var ctx = new Context();
-            return ctx.Customers.FirstOrDefault(c => c.FirstName.ToLower() == name.ToLower());
+            return ctx.Customers.Where(c => c.FirstName.ToLower() == name.ToLower() && c.Password == password.ToLower()).FirstOrDefault();
         }
         public static Customer GetCustomerByPassword(string pass)
         {
-            using var ctx = new Context();
             return ctx.Customers.FirstOrDefault(c => c.Password.ToLower() == pass.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
         {
-            using var ctx = new Context();
             try
             {
                 // Här säger jag åt contextet att inte oroa sig över innehållet i dessa records.
