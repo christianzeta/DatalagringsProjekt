@@ -8,6 +8,8 @@
         Title="LoginWindow" Height="450" Width="800">
     <Grid Background="LightBlue">
         
+
+
         <Label Content="WELCOME" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" FontSize="20"/>
         
         <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,150,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" />
@@ -16,6 +18,7 @@
         </TextBox>
         <Label Content="or" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top"/>
         <Button Click="CreateAccount_Click" Content="Create Account" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top"/>
+        
         
 
 

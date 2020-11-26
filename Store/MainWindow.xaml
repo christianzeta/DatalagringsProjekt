@@ -31,7 +31,7 @@
                     <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental</Label>
                     <Button Width="100" Background="#333" Foreground="White" Content="Profile" Click="ProfileButton_Click"></Button>
                     <Button Width="100" Background="#333" Foreground="White" Content="Information"></Button>
-                    <Button Width="100" Background="#333" Foreground="White" Content="Log Out"></Button>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Log Out" Click="Logout_Click"></Button>
                     <TextBlock Width="200" Height="40" TextAlignment="Center" Padding="12"  Foreground="White" Name="SignedInAs"></TextBlock>
                 </StackPanel>
             </Grid>
