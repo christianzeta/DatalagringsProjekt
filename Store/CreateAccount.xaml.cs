@@ -33,11 +33,22 @@ namespace Store
         {
             string username = CreateAccountUsernameField.Text;
             string password = CreateAccountPasswordField.Text;
-            API.AddUser(username, password);
-            var next_window = new LoginWindow();
-            next_window.Show();
+            string passwordMatch = ConfirmPasswordField.Text;
+            if (password == passwordMatch)
+            {
 
-            this.Close();
+                API.AddUser(username, password);
+                var next_window = new LoginWindow();
+                next_window.Show();
+                this.Close();
+
+            }
+            else
+            {
+                var new_window = new PassMissMatch();
+                new_window.Show();
+                this.Close();
+            }
 
         }
         
