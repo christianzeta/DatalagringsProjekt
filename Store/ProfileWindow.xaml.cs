@@ -25,16 +25,17 @@ namespace Store
             var greeting = "Profilpage: " + name + ", Number of rented Movies: ";
             ProfileName.Text = greeting.ToUpper();
             ProfileName.FontSize = 10;
-            var rentedMovies = DatabaseConnection.API.GetSalesList(State.User.Id);
-            ProfileName.Text += rentedMovies.Count;
+            var currentMovies = DatabaseConnection.API.GetCurrentMovieList(State.User.Id);
+            var previousMovies = DatabaseConnection.API.GetPreviousMovieList(State.User.Id);
+            ProfileName.Text += currentMovies.Count;
             for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
                 {
                     int i = y * MovieGrid.ColumnDefinitions.Count + x;
-                    if (i < rentedMovies.Count)
+                    if (i < currentMovies.Count)
                     {
-                        var movie = rentedMovies[i];
+                        var movie = currentMovies[i];
 
                         try
                         {
