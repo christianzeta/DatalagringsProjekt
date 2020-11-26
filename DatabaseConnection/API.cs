@@ -15,17 +15,35 @@ namespace DatabaseConnection
             ctx = new Context();
         }
 
-        public static List<Movie> GetSalesList(int userId)
-        { 
+
+        public static List<Movie> GetPreviousMovieList(int userId)
+        {
             var salesList = ctx.Sales.Where(c => c.Customer.Id == userId).ToList();
-            List<Movie> movieList = new List<Movie>();
+            List<Movie> PreviousMovieList = new List<Movie>();
             foreach (var sale in salesList)
             {
-                movieList.Add(sale.Movie);
+                if (sale.ReturnDate < DateTime.Now)
+                {
+                    PreviousMovieList.Add(sale.Movie);
+                }
             }
-
-            return movieList;
+            return PreviousMovieList;
         }
+
+        public static List<Movie> GetCurrentMovieList(int userId)
+        { 
+            var salesList = ctx.Sales.Where(c => c.Customer.Id == userId).ToList();
+            List<Movie> CurrentMovieList = new List<Movie>();
+            foreach (var sale in salesList)
+            {
+                if (sale.ReturnDate > DateTime.Now)
+                {
+                    CurrentMovieList.Add(sale.Movie);
+                }
+            }
+            return CurrentMovieList;
+        }
+
         public static void AddUser(string username, string password)
         {
            
@@ -56,7 +74,7 @@ namespace DatabaseConnection
                 ctx.Entry(customer).State = EntityState.Unchanged;
                 ctx.Entry(movie).State = EntityState.Unchanged;
 
-                ctx.Add(new Rental() { Date = DateTime.Now, Customer = customer, Movie = movie });
+                ctx.Add(new Rental() { Date = DateTime.Now, ReturnDate = DateTime.Now.AddDays(2), Customer = customer, Movie = movie });
                 return ctx.SaveChanges() == 1;
             }
             catch(DbUpdateException e)
