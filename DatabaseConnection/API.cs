@@ -30,6 +30,20 @@ namespace DatabaseConnection
             return PreviousMovieList;
         }
 
+        public static List<DateTime> GetReturnDates(int userId)
+        {
+            var salesList = ctx.Sales.Where(c => c.Customer.Id == userId).ToList();
+            List<DateTime> ReturnDates = new List<DateTime>();
+            foreach (var sale in salesList)
+            {
+                if (sale.ReturnDate > DateTime.Now)
+                {
+                    ReturnDates.Add(sale.ReturnDate);
+                }
+            }
+            return ReturnDates;
+        }
+
         public static List<Movie> GetCurrentMovieList(int userId)
         { 
             var salesList = ctx.Sales.Where(c => c.Customer.Id == userId).ToList();

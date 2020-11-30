@@ -28,6 +28,7 @@ namespace Store
             ProfileName.FontSize = 10;
             var currentMovies = DatabaseConnection.API.GetCurrentMovieList(State.User.Id);
             var previousMovies = DatabaseConnection.API.GetPreviousMovieList(State.User.Id);
+            var returnDates = DatabaseConnection.API.GetReturnDates(State.User.Id);
             ProfileName.Text += currentMovies.Count;
             for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
             {
@@ -37,22 +38,35 @@ namespace Store
                     if (i < currentMovies.Count)
                     {
                         var movie = currentMovies[i];
-
+                        var returnDate = returnDates[i];
                         try
                         {
+                            var imagestack = new StackPanel() { };
+                            imagestack.Height = 250;
                             var image = new Image() { };
-                            var title = new TextBlock() { };
+                            var titleBlock = new TextBlock() { };
+                            var returnBlock = new TextBlock() { };
+                            titleBlock.Text = movie.Title;
+                            titleBlock.FontSize = 12;
+                            titleBlock.TextAlignment = TextAlignment.Center;
+                            titleBlock.Foreground = new SolidColorBrush(Colors.White);
+                            returnBlock.Text = "Ends: " + returnDate.ToString();
+                            returnBlock.FontSize = 12;
+                            returnBlock.TextAlignment = TextAlignment.Center;
+                            returnBlock.Foreground = new SolidColorBrush(Colors.White);
                             image.Cursor = Cursors.Hand;
-                            //image.MouseUp += Image_MouseUp;
                             image.HorizontalAlignment = HorizontalAlignment.Center;
                             image.VerticalAlignment = VerticalAlignment.Center;
                             image.Source = new BitmapImage(new Uri(movie.ImageURL));
-                            //image.Height = 120;
+                            image.Height = 200;
                             image.Margin = new Thickness(4, 4, 4, 4);
-
-                            MovieGrid.Children.Add(image);
-                            Grid.SetRow(image, y);
-                            Grid.SetColumn(image, x);
+                            imagestack.Children.Add(image);
+                            imagestack.Children.Add(titleBlock);
+                            imagestack.Children.Add(returnBlock);
+                            //imagestack.MouseUp += Imagestack_MouseUp;
+                            MovieGrid.Children.Add(imagestack);
+                            Grid.SetRow(imagestack, y);
+                            Grid.SetColumn(imagestack, x);
                         }
                         catch (Exception e) when
                             (e is ArgumentNullException ||
@@ -67,6 +81,7 @@ namespace Store
             AccountName.Text = "Name: " + name;
             AccountMobile.Text = "Mobile: " + State.User.Mobile;
         }
+
 
         private void MoviesButton_Click(object sender, RoutedEventArgs e)
         {
