@@ -39,18 +39,25 @@ namespace Store
 
                         try
                         {
+                            var imagestack = new StackPanel() { };
+                            imagestack.Height = 250;
                             var image = new Image() { };
+                            var textblock = new TextBlock() { };
+                            textblock.Text = movie.Title;
+                            textblock.FontSize = 12;
+                            textblock.TextAlignment = TextAlignment.Center;
                             image.Cursor = Cursors.Hand;
-                            image.MouseUp += Image_MouseUp;
                             image.HorizontalAlignment = HorizontalAlignment.Center;
                             image.VerticalAlignment = VerticalAlignment.Center;
                             image.Source = new BitmapImage(new Uri(movie.ImageURL));
-                            //image.Height = 120;
+                            image.Height = 200;
                             image.Margin = new Thickness(4, 4, 4, 4);
-
-                            MovieGrid.Children.Add(image);
-                            Grid.SetRow(image, y);
-                            Grid.SetColumn(image, x);
+                            imagestack.Children.Add(image);
+                            imagestack.Children.Add(textblock);
+                            imagestack.MouseUp += Imagestack_MouseUp;
+                            MovieGrid.Children.Add(imagestack);
+                            Grid.SetRow(imagestack, y);
+                            Grid.SetColumn(imagestack, x);
                         }
                         catch (Exception e) when 
                             (e is ArgumentNullException || 
@@ -64,7 +71,7 @@ namespace Store
             }
         }
 
-        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        private void Imagestack_MouseUp(object sender, MouseButtonEventArgs e)
         {
             var x = Grid.GetColumn(sender as UIElement);
             var y = Grid.GetRow(sender as UIElement);

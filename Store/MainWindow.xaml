@@ -44,16 +44,16 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
                 </Grid.RowDefinitions>
             </Grid>
         </Grid>
