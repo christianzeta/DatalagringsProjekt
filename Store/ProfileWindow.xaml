@@ -33,6 +33,7 @@
                     <Button Width="100" Background="#333" Foreground="White" Content="Information" ></Button>
                     <Button Width="100" Background="#999" Foreground="White" Content="Log Out" ></Button>
                     <TextBlock Name="ProfileName" Width="600" Foreground="Black" Text="Profilepage" Padding="12"></TextBlock>
+                    <Button Width="100" Background="#333" Foreground="White" Content="Settings" Margin="50,0,0,0"/>
                 </StackPanel>
 
             </Grid>

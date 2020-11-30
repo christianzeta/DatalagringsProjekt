@@ -1,0 +1,16 @@
+﻿<Window x:Class="Store.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store"
+        mc:Ignorable="d"
+        Title="Settings" Height="450" Width="800">
+    <Grid Background="#111">
+        <TextBlock Text="Settings" FontSize="25" Foreground="LightGray" />
+        <TextBlock Text="Change Password" FontSize="20" Foreground="LightGray" Margin="0,50,0,0"  VerticalAlignment="top" HorizontalAlignment="Center"/>
+        <TextBox Name="OldPasswordField" HorizontalAlignment="Center" Margin="0,175,0,0" Text="Old Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
+        <TextBox Name="NewPasswordField" HorizontalAlignment="Center" Margin="0,200,0,0" Text="New Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
+        <TextBox Name="ConfirmNewPasswordField" HorizontalAlignment="Center" Margin="0,225,0,0" Text="New Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
+    </Grid>
+</Window>
