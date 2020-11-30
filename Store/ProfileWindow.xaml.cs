@@ -64,6 +64,8 @@ namespace Store
                     }
                 }
             }
+            AccountName.Text = "Name: " + name;
+            AccountMobile.Text = "Mobile: " + State.User.Mobile;
         }
 
         private void MoviesButton_Click(object sender, RoutedEventArgs e)

@@ -16,6 +16,7 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <Grid Name="MenuGrid" Grid.Column="1" Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -41,7 +42,6 @@
                 <TextBlock Text="Rented Movies" Background="Black" Foreground="White" TextAlignment="Center" FontSize="30" Margin="30"></TextBlock>
             </StackPanel>
 
-
             <Grid Name="MovieGrid" Background="#111" ShowGridLines="False" Grid.Column="1" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -63,6 +63,26 @@
                     <RowDefinition Height="140" />
                 </Grid.RowDefinitions>
             </Grid>
+
+            <Grid Name="AccountGrid" Grid.Column="1" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Account Information" Foreground="White" FontSize="30" Margin="30" TextAlignment="Center"></TextBlock>
+                <StackPanel Name="AccountLeft" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Name ="AccountName" Foreground="White" FontSize="20"></TextBlock>
+                </StackPanel>
+                <StackPanel Name="AccountRight" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Name ="AccountMobile" Text="Mobile: No number assigned." Foreground="White" FontSize="20">
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+
         </Grid>
     </ScrollViewer>
 </Window>
