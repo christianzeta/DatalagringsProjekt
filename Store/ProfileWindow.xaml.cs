@@ -20,6 +20,7 @@ namespace Store
         
         public ProfileWindow()
         {
+
             InitializeComponent();
             var name = State.User.FirstName + " " + State.User.LastName;
             var greeting = "Profilpage: " + name + ", Number of rented Movies: ";
@@ -40,6 +41,7 @@ namespace Store
                         try
                         {
                             var image = new Image() { };
+                            var title = new TextBlock() { };
                             image.Cursor = Cursors.Hand;
                             //image.MouseUp += Image_MouseUp;
                             image.HorizontalAlignment = HorizontalAlignment.Center;

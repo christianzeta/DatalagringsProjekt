@@ -8,15 +8,16 @@
         Title="ProfileWindow" Height="450" Width="1200">
 
     <ScrollViewer>
-        <Grid Name="ContainerGrid" Background="Beige">
+        <Grid Name="ContainerGrid" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <Grid Name="MenuGrid">
+            <Grid Name="MenuGrid" Grid.Column="1" Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -35,9 +36,13 @@
                     <TextBlock Name="ProfileName" Width="600" Foreground="Black" Text="Profilepage" Padding="12"></TextBlock>
                     <Button Width="100" Background="#333" Foreground="White" Content="Settings" Margin="50,0,0,0"/>
                 </StackPanel>
-
             </Grid>
-            <Grid Name="MovieGrid" Background="#111" ShowGridLines="False" Grid.Column="1" Grid.Row="1">
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Rented Movies" Background="Black" Foreground="White" TextAlignment="Center" FontSize="30" Margin="30"></TextBlock>
+            </StackPanel>
+
+
+            <Grid Name="MovieGrid" Background="#111" ShowGridLines="False" Grid.Column="1" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
