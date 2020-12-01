@@ -27,8 +27,20 @@ namespace Store
             var name = State.User.FirstName;
             var SignInText = "Du är inloggad som: " + name;
             SignedInAs.Text = SignInText;
-            State.Movies = API.GetMovieSlice(0, 30);
-            for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
+
+            if (State.Sorting == "Rating") 
+            {
+                State.Movies = API.SortByRating(0, 30);
+           
+            }
+            else 
+            {
+                State.Movies = API.GetMovieSlice(0, 30);
+            }
+            
+
+           
+          for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
                 {
@@ -59,9 +71,9 @@ namespace Store
                             Grid.SetRow(imagestack, y);
                             Grid.SetColumn(imagestack, x);
                         }
-                        catch (Exception e) when 
-                            (e is ArgumentNullException || 
-                             e is System.IO.FileNotFoundException || 
+                        catch (Exception e) when
+                            (e is ArgumentNullException ||
+                             e is System.IO.FileNotFoundException ||
                              e is UriFormatException)
                         {
                             continue;
@@ -70,6 +82,7 @@ namespace Store
                 }
             }
         }
+
 
         private void Imagestack_MouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -103,6 +116,14 @@ namespace Store
             this.Close();
             
             
+        }
+
+        private void SortByRating_Click(object sender, RoutedEventArgs e)
+        {
+            State.Sorting = "Rating";
+            var next_window = new MainWindow();
+            next_window.Show();
+            this.Close();
         }
     }
 }

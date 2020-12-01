@@ -15,6 +15,11 @@ namespace DatabaseConnection
             ctx = new Context();
         }
 
+        public static List<Movie> SortByRating(int a, int b)
+        {
+            return ctx.Movies.OrderByDescending(m => m.Rating).Skip(a).Take(b).ToList();
+        }
+
 
         public static List<Movie> GetPreviousMovieList(int userId)
         {
@@ -71,10 +76,12 @@ namespace DatabaseConnection
         {
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
+
         public static Customer GetCustomerByNameAndPass(string name, string password)
         {
             return ctx.Customers.Where(c => c.FirstName.ToLower() == name.ToLower() && c.Password == password.ToLower()).FirstOrDefault();
         }
+
         public static Customer GetCustomerByPassword(string pass)
         {
             return ctx.Customers.FirstOrDefault(c => c.Password.ToLower() == pass.ToLower());

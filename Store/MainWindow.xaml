@@ -8,11 +8,12 @@
         Title="MainWindow" Height="450" Width="1200">
 
     <ScrollViewer>
-        <Grid Name="ContainerGrid" Background="Beige">
+        <Grid Name="ContainerGrid" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
@@ -28,14 +29,18 @@
                     <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Orientation="Horizontal" Background="#222" Height="40" VerticalAlignment="Top">
-                    <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental</Label>
+                    <Label Width="100" Background="#333" Foreground="White" Margin="10,7" Content="Movie Rental"></Label>
                     <Button Width="100" Background="#333" Foreground="White" Content="Profile" Click="ProfileButton_Click"></Button>
                     <Button Width="100" Background="#333" Foreground="White" Content="Information"></Button>
                     <Button Width="100" Background="#333" Foreground="White" Content="Log Out" Click="Logout_Click"></Button>
                     <TextBlock Width="200" Height="40" TextAlignment="Center" Padding="12"  Foreground="White" Name="SignedInAs"></TextBlock>
                 </StackPanel>
             </Grid>
-            <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="False" Grid.Column="1" Grid.Row="1">
+            <StackPanel Name="Sorting" Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Height="40">
+                <Label Width="100" Background="black" Foreground="White" Margin="10,7" Content="Order By: "></Label>
+                <Button Width="100" Background="#333" Foreground="White" Content="Rating" Click="SortByRating_Click"></Button>
+            </StackPanel>
+            <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="False" Grid.Column="1" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
