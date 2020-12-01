@@ -19,10 +19,10 @@ namespace DatabaseConnection
                 ctx.RemoveRange(ctx.Customers);
 
                 ctx.AddRange(new List<Customer> {
-                    new Customer { FirstName = "Björn", LastName = "Karlsson", Mobile = 07074455445, Password = "1"},
-                    new Customer { FirstName = "Robin", LastName = "Nilsson", Mobile = 07074455445, Password = "1"},
-                    new Customer { FirstName = "Kalle", LastName = "Andersson", Mobile = 07074455445, Password = "1"},
-                    new Customer { FirstName = "Kim", LastName = "Eriksson", Mobile = 07074455445, Password = "1"},
+                    new Customer { FirstName = "Björn", LastName = "Karlsson", Password = "1"},
+                    new Customer { FirstName = "Robin", LastName = "Nilsson", Password = "1"},
+                    new Customer { FirstName = "Kalle", LastName = "Andersson", Password = "1"},
+                    new Customer { FirstName = "Kim", LastName = "Eriksson",  Password = "1"},
                     
                     
 
@@ -36,13 +36,14 @@ namespace DatabaseConnection
                     // imdbId,Imdb Link,Title,IMDB Score,Genre,Poster
                     var cells = lines[i].Split(',');
 
+                    
                     var url = cells[5].Trim('"');
 
                     // Hoppa över alla icke-fungerande url:er
                     try{ var test = new Uri(url); }
                     catch (Exception) { continue; }
 
-                    movies.Add(new Movie { Title = cells[2], ImageURL = url });
+                    movies.Add(new Movie { Title = cells[2], ImageURL = url, Rating = cells[3]});
                 }
                 ctx.AddRange(movies);
                 
