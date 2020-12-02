@@ -14,12 +14,16 @@ namespace DatabaseConnection
         {
             ctx = new Context();
         }
+        public static List<Movie> SortByCategory(int a, int b, string category)
+        {
+            var categoriList = ctx.Movies.Where(m => m.Genre.Contains(category)).ToList();
+            return categoriList;
+        }
 
         public static List<Movie> SortByRating(int a, int b)
         {
             return ctx.Movies.OrderByDescending(m => m.Rating).Skip(a).Take(b).ToList();
         }
-
 
         public static List<Movie> GetPreviousMovieList(int userId)
         {

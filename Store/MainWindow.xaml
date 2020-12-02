@@ -39,8 +39,12 @@
             <StackPanel Name="Sorting" Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Height="40" Margin="30">
                 <Label Width="100" Background="black" Foreground="White" Margin="10,7" Content="Order By: "></Label>
                 <Button Width="100" Background="#333" Foreground="White" Content="Rating" Click="SortByRating_Click"></Button>
-                <Button Width="100" Background="#333" Foreground="White" Content="Title" Click="SortByTitle_Click">
-                </Button>
+                <Button Width="100" Background="#333" Foreground="White" Content="Title" Click="SortByTitle_Click"></Button>
+                <Menu Background="DarkSlateGray" Foreground="White" Width="100">
+                    <MenuItem Name ="CategoryMenu" Header="_Categories Menu" HorizontalAlignment="Center" Width="100" Height="40">
+            
+                    </MenuItem>
+                </Menu>
             </StackPanel>
             <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="False" Grid.Column="1" Grid.Row="2">
                 <Grid.ColumnDefinitions>

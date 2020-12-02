@@ -24,10 +24,22 @@ namespace Store
         public MainWindow()
         {
             InitializeComponent();
-            var name = State.User.FirstName;
+            var name = "test";
             var SignInText = "Du är inloggad som: " + name;
             SignedInAs.Text = SignInText;
 
+            var categories = new List<String> { "Comedy", "Action", "Thriller", "Drama", "Documentary", "Horror", "Sport", "Biography"};
+            foreach (var category in categories)
+            {
+                var menuItem = new MenuItem() { };
+                menuItem.Header = category;
+                menuItem.Name = category;
+                menuItem.Click += Category_Click;
+                menuItem.Background = new SolidColorBrush(Colors.Black);
+                menuItem.Foreground = new SolidColorBrush(Colors.White);
+                this.CategoryMenu.Items.Add(menuItem);
+            }
+            
             switch (State.Sorting)
             {
                 case "Rating":
@@ -35,6 +47,30 @@ namespace Store
                     break;
                 case "´Title":
                     State.Movies = API.GetMovieSlice(0, 30);
+                    break;
+                case "Comedy":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Action":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Thriller":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Drama":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Documentary":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Horror":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Sport":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
+                    break;
+                case "Biography":
+                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
                     break;
                 default:
                     State.Movies = API.GetMovieSlice(0, 30);
@@ -83,8 +119,17 @@ namespace Store
                 }
             }
         }
+        private void Category_Click(object sender, RoutedEventArgs e)
+        {
+            var MenuItem = sender as MenuItem;
+            var name = MenuItem.Name;
+            State.Sorting = name;
+            var next_window = new MainWindow();
+            next_window.Show();
+            this.Close();
 
-
+        }
+  
         private void Imagestack_MouseUp(object sender, MouseButtonEventArgs e)
         {
             var x = Grid.GetColumn(sender as UIElement);
@@ -117,6 +162,14 @@ namespace Store
             this.Close();
             
             
+        }
+
+        private void SortByComedy_Click(object sender, RoutedEventArgs e)
+        {
+            State.Sorting = "Comedy";
+            var next_window = new MainWindow();
+            next_window.Show();
+            this.Close();
         }
 
         private void SortByRating_Click(object sender, RoutedEventArgs e)
