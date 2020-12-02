@@ -19,13 +19,10 @@ namespace DatabaseConnection
                 ctx.RemoveRange(ctx.Customers);
 
                 ctx.AddRange(new List<Customer> {
-                    new Customer { FirstName = "Björn", LastName = "Karlsson", Password = "1"},
-                    new Customer { FirstName = "Robin", LastName = "Nilsson", Password = "1"},
-                    new Customer { FirstName = "Kalle", LastName = "Andersson", Password = "1"},
-                    new Customer { FirstName = "Kim", LastName = "Eriksson",  Password = "1"},
-                    
-                    
-
+                    new Customer { FirstName = "Björn", LastName = "Karlsson", Password = "1", Mobile = "0700304050"},
+                    new Customer { FirstName = "Robin", LastName = "Nilsson", Password = "1", Mobile = "0700304050"},
+                    new Customer { FirstName = "Kalle", LastName = "Andersson", Password = "1", Mobile = "0700304050"},
+                    new Customer { FirstName = "Kim", LastName = "Eriksson",  Password = "1", Mobile = "0700304050"},
                 });
 
                 // Här laddas data in från SeedData foldern för att fylla ut Movies tabellen

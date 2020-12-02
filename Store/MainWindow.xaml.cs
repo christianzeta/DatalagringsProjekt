@@ -28,17 +28,18 @@ namespace Store
             var SignInText = "Du är inloggad som: " + name;
             SignedInAs.Text = SignInText;
 
-            if (State.Sorting == "Rating") 
+            switch (State.Sorting)
             {
-                State.Movies = API.SortByRating(0, 30);
-           
+                case "Rating":
+                    State.Movies = API.SortByRating(0, 30);
+                    break;
+                case "´Title":
+                    State.Movies = API.GetMovieSlice(0, 30);
+                    break;
+                default:
+                    State.Movies = API.GetMovieSlice(0, 30);
+                    break;
             }
-            else 
-            {
-                State.Movies = API.GetMovieSlice(0, 30);
-            }
-            
-
            
           for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
             {
@@ -121,6 +122,13 @@ namespace Store
         private void SortByRating_Click(object sender, RoutedEventArgs e)
         {
             State.Sorting = "Rating";
+            var next_window = new MainWindow();
+            next_window.Show();
+            this.Close();
+        }
+        private void SortByTitle_Click(object sender, RoutedEventArgs e)
+        {
+            State.Sorting = "Title";
             var next_window = new MainWindow();
             next_window.Show();
             this.Close();
