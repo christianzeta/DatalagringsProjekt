@@ -36,9 +36,11 @@
                     <TextBlock Width="200" Height="40" TextAlignment="Center" Padding="12"  Foreground="White" Name="SignedInAs"></TextBlock>
                 </StackPanel>
             </Grid>
-            <StackPanel Name="Sorting" Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Height="40">
+            <StackPanel Name="Sorting" Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Height="40" Margin="30">
                 <Label Width="100" Background="black" Foreground="White" Margin="10,7" Content="Order By: "></Label>
                 <Button Width="100" Background="#333" Foreground="White" Content="Rating" Click="SortByRating_Click"></Button>
+                <Button Width="100" Background="#333" Foreground="White" Content="Title" Click="SortByTitle_Click">
+                </Button>
             </StackPanel>
             <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="False" Grid.Column="1" Grid.Row="2">
                 <Grid.ColumnDefinitions>
