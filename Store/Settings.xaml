@@ -7,10 +7,21 @@
         mc:Ignorable="d"
         Title="Settings" Height="450" Width="800">
     <Grid Background="#111">
-        <TextBlock Text="Settings" FontSize="25" Foreground="LightGray" />
+        
+        
         <TextBlock Text="Change Password" FontSize="20" Foreground="LightGray" Margin="0,50,0,0"  VerticalAlignment="top" HorizontalAlignment="Center"/>
         <TextBox Name="OldPasswordField" HorizontalAlignment="Center" Margin="0,175,0,0" Text="Old Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
         <TextBox Name="NewPasswordField" HorizontalAlignment="Center" Margin="0,200,0,0" Text="New Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
-        <TextBox Name="ConfirmNewPasswordField" HorizontalAlignment="Center" Margin="0,225,0,0" Text="New Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
+        <TextBox Name="ConfirmNewPasswordField" HorizontalAlignment="Center" Margin="0,225,0,0" Text="Confirm Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="2" Background="LightGray"/>
+        <Button Click="ChangePassword_Click" Content="Change Password" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <Grid Name="TopGrid" Grid.Column="1" Grid.Row="0" Height="40" VerticalAlignment="Top">
+            <TextBlock Name="ProfileUsername" HorizontalAlignment="Left" Margin="100,0,0,0" Width="400" Height="40" Foreground="LightGray" Text="username" Padding="12"></TextBlock>
+            <TextBlock Text="Settings" FontSize="25" Foreground="LightGray" />
+            <Button Click="Profile_Click" Content="Profile" Width="90" HorizontalAlignment="Right"/>
+
+
+        </Grid>
+        
     </Grid>
+    
 </Window>

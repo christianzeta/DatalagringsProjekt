@@ -92,5 +92,14 @@ namespace Store
                 this.Close();
             }
         }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new Settings();
+            next_window.Show();
+            this.Close();
+
+        }
+        
     }
 }
