@@ -74,6 +74,10 @@ namespace DatabaseConnection
             ctx.Add(new Customer { FirstName = username, Password = password});
             ctx.SaveChanges();
         }
+        public static void Changepassword()
+        {
+            ctx.SaveChanges();
+        }
 
 
         public static List<Movie> GetMovieSlice(int a, int b)
