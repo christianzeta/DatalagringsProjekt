@@ -87,6 +87,7 @@ namespace DatabaseConnection
 
         public static Customer GetCustomerByNameAndPass(string name, string password)
         {
+            
             return ctx.Customers.Where(c => c.FirstName.ToLower() == name.ToLower() && c.Password == password.ToLower()).FirstOrDefault();
         }
 

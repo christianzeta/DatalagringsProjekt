@@ -100,6 +100,14 @@ namespace Store
             this.Close();
 
         }
-        
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new LoginWindow();
+            next_window.Show();
+            this.Close();
+
+        }
+
     }
 }

@@ -33,7 +33,7 @@
                     <Label Width="100" Background="#333" Foreground="White" Margin="10,7">Movie Rental</Label>
                     <Button Width="100" Background="#333" Foreground="White" Content="Movies" Click="MoviesButton_Click"></Button>
                     <Button Width="100" Background="#333" Foreground="White" Content="Information" ></Button>
-                    <Button Width="100" Background="#999" Foreground="White" Content="Log Out" ></Button>
+                    <Button Width="100" Background="#999" Foreground="White" Content="Log Out"  Click="Logout_Click"></Button>
                     <TextBlock Name="ProfileName" Width="600" Foreground="Black" Text="Profilepage" Padding="12"></TextBlock>
                     <Button Click="Settings_Click" Width="100" Background="#333" Foreground="White" Content="Settings" Margin="50,0,0,0"/>
                 </StackPanel>
