@@ -67,14 +67,14 @@ namespace DatabaseConnection
             return CurrentMovieList;
         }
 
-        public static void AddUser(string username, string password)
+        public static void AddUser(string username, string password, string mobile, string firstName, string lastName)
         {
            
             //DatabaseConnection.API.AddUser(username);
-            ctx.Add(new Customer { FirstName = username, Password = password});
+            ctx.Add(new Customer { Username = username, Password = password, Mobile = mobile, FirstName = firstName, LastName = lastName });
             ctx.SaveChanges();
         }
-        public static void Changepassword()
+        public static void SaveChanges()
         {
             ctx.SaveChanges();
         }
@@ -87,7 +87,7 @@ namespace DatabaseConnection
 
         public static Customer GetCustomerByNameAndPass(string name, string password)
         {
-            return ctx.Customers.Where(c => c.FirstName.ToLower() == name.ToLower() && c.Password == password.ToLower()).FirstOrDefault();
+            return ctx.Customers.Where(c => c.Username.ToLower() == name.ToLower() && c.Password == password.ToLower()).FirstOrDefault();
         }
 
         public static Customer GetCustomerByPassword(string pass)
