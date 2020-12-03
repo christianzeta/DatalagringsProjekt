@@ -18,10 +18,10 @@ namespace DatabaseConnection
                 ctx.RemoveRange(ctx.Customers);
 
                 ctx.AddRange(new List<Customer> {
-                    new Customer { FirstName = "Björn", LastName = "Karlsson", Password = "1", Mobile = "0700304050"},
-                    new Customer { FirstName = "Robin", LastName = "Nilsson", Password = "1", Mobile = "0700304050"},
-                    new Customer { FirstName = "Kalle", LastName = "Andersson", Password = "1", Mobile = "0700304050"},
-                    new Customer { FirstName = "Kim", LastName = "Eriksson",  Password = "1", Mobile = "0700304050"},
+                    new Customer { Username = "Björn1", FirstName = "Björn", LastName = "Karlsson", Password = "1", Mobile = "0700304050"},
+                    new Customer { Username = "Robin1", FirstName = "Robin", LastName = "Nilsson", Password = "1", Mobile = "0700304050"},
+                    new Customer { Username = "Kalle1", FirstName = "Kalle", LastName = "Andersson", Password = "1", Mobile = "0700304050"},
+                    new Customer { Username = "Kim1", FirstName = "Kim", LastName = "Eriksson",  Password = "1", Mobile = "0700304050"},
                 });
 
 
