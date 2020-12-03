@@ -39,44 +39,22 @@ namespace Store
                 menuItem.Foreground = new SolidColorBrush(Colors.White);
                 this.CategoryMenu.Items.Add(menuItem);
             }
-            
-            switch (State.Sorting)
+
+            State.Movies = State.Sorting switch
             {
-                case "Rating":
-                    State.Movies = API.SortByRating(0, 30);
-                    break;
-                case "´Title":
-                    State.Movies = API.GetMovieSlice(0, 30);
-                    break;
-                case "Comedy":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Action":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Thriller":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Drama":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Documentary":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Horror":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Sport":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                case "Biography":
-                    State.Movies = API.SortByCategory(0, 30, State.Sorting);
-                    break;
-                default:
-                    State.Movies = API.GetMovieSlice(0, 30);
-                    break;
-            }
-           
+                "Rating" => API.SortByRating(0, 30),
+                "Title"  => API.GetMovieSlice(0, 30),
+                "Comedy" => API.SortByCategory(0, 30, State.Sorting),
+                "Action" => API.SortByCategory(0, 30, State.Sorting),
+                "Thriller" => API.SortByCategory(0, 30, State.Sorting),
+                "Drama" => API.SortByCategory(0, 30, State.Sorting),
+                "Documentary" => API.SortByCategory(0, 30, State.Sorting),
+                "Horror" => API.SortByCategory(0, 30, State.Sorting),
+                "Sport" => API.SortByCategory(0, 30, State.Sorting),
+                "Biography" => API.SortByCategory(0, 30, State.Sorting),
+                 _       => throw new NotSupportedException(),
+            };
+
           for (int y = 0; y <= MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)

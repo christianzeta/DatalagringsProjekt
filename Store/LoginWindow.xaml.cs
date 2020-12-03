@@ -26,7 +26,8 @@ namespace Store
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             State.User = API.GetCustomerByNameAndPass(NameField.Text.Trim(), PasswordField.Text.Trim());
-   
+            State.Sorting = "Title";
+
             if (State.User != null)
             {
                 var next_window = new MainWindow();
