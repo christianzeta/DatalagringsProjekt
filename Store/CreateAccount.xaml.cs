@@ -34,10 +34,13 @@ namespace Store
             string username = CreateAccountUsernameField.Text;
             string password = CreateAccountPasswordField.Text;
             string passwordMatch = ConfirmPasswordField.Text;
+            string mobile = PhoneNumberField.Text;
+            string firstName = FirstNameField.Text;
+            string lastName = LastNameField.Text;
             if (password == passwordMatch)
             {
 
-                API.AddUser(username, password);
+                API.AddUser(username, password, mobile, firstName, lastName);
                 var next_window = new LoginWindow();
                 next_window.Show();
                 this.Close();
@@ -51,7 +54,14 @@ namespace Store
             }
 
         }
-        
+        public void GoBackLogin_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new LoginWindow();
+            next_window.Show();
+            this.Close();
+        }
+
+
 
     }
 

@@ -24,7 +24,7 @@ namespace Store
         public MainWindow()
         {
             InitializeComponent();
-            var name = State.User.FirstName;
+            var name = State.User.Username;
             var SignInText = "Du är inloggad som: " + name;
             SignedInAs.Text = SignInText;
 

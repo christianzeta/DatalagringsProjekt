@@ -47,7 +47,7 @@ namespace Store
                     var new_window = new ProfileWindow();
                     new_window.Show();
                     this.Close();
-                    API.Changepassword();
+                    API.SaveChanges();
 
                 }
 
